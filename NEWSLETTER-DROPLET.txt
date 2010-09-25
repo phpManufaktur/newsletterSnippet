@@ -1,0 +1,38 @@
+NEWSLETTER DROPLET v1.0 - July 19, 2010 - Initial Release by Michael Milette
+
+The Newsletter droplet below is based on the Snippet created by Ralf Hertsch. It makes it easy for site administrators to:
+
+- Have a newsletter signup form on specific pages
+
+- Support multiple newsletters
+
+
+STEP 1: VERIFY VERSION OF WEBSITE BAKER
+
+Droplet support requires Website Baker v2.8+ or Website Baker v2.7 with Droplet add-on module.
+
+
+STEP 2: CREATE THE DROPLET CODE
+---------8<---------8<---------8<---------
+
+$SignUpForm = "";
+if (function_exists('newsletter_info')) {
+  ob_start();
+    newsletter_info($title,$from,true,false);
+    $SignUpForm=ob_get_contents();
+  ob_end_clean();
+}
+return $SignUpForm;
+
+---------8<---------8<---------8<---------
+
+
+STEP 3: ADD THE DROPLET TO A PAGE
+
+[[Newsletter?title=Newsletter&from=newsletter(at)ralf-hertsch(dot)de]]
+
+Where...
+
+  title: The Mass Mail group name.
+
+  from : The email address from whom the newsletter will be sent.

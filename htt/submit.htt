@@ -1,0 +1,20 @@
+<div class="newsletter">
+  <form name="nl" action="{form_action}" method="post">
+    <input type="hidden" name="nl_action" value="subscribe" />
+    <table width="100%">
+      <tr class="nl_intro">
+        <td colspan="2">{intro}</td>
+      </tr>
+      <tr class="nl_email">
+          <td colspan="2"><span style="font-size:smaller;">{header_email}</span><br /><input type="text" name="nl_email" value="{nl_email}" /></td>
+      </tr>
+      <tr class="nl_subscribe">
+          <td width="50%"><input type="radio" name="nl_subscribe" value="1" checked="checked" /><span style="font-size:smaller;">{text_subscribe}</span></td>
+          <td width="50%"><input type="radio" name="nl_subscribe" value="0" /><span style="font-size:smaller;">{text_unsubscribe}</span></td>
+      </tr>
+      <tr class="nl_submit">
+          <td colspan="2"><input type="submit" value="{btn_submit}" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
